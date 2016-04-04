@@ -3,8 +3,21 @@
   "version": "0.0.1",
   "description": "MVP app",
   "main": "app.js",
+  "repository": "",
+  "license": "Proprietary",
+  "private": false,
+  "engines": {
+    "node": "0.12"
+  },
   "author": {
     "name": "Andrew Vedady",
     "email": ""
+  },
+
+"dependencies": {
+    "express": "~3.4.8",
+    "express-partials": "~0.2.0",
+    "forever": "^0.10.11",
+    "lodash": "~2.4.0",
   }
-}
+},
