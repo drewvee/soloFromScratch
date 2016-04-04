@@ -18,6 +18,6 @@
     "express": "~3.4.8",
     "express-partials": "~0.2.0",
     "forever": "^0.10.11",
-    "lodash": "~2.4.0",
+    "lodash": "~2.4.0"
   }
-},
+}
