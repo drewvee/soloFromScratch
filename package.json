@@ -2,7 +2,7 @@
   "name": "soloFromScratch",
   "version": "0.0.1",
   "description": "MVP app",
-  "main": "app.js",
+  "main": "server.js",
   "repository": "",
   "license": "Proprietary",
   "private": false,
