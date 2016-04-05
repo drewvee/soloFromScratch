@@ -1,0 +1,21 @@
+<doctype! html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+</head>
+
+<body ng-app="scratch">
+  <div class="resto" ng-controller="restoCtrl">
+    <h1>{{ title }} </h1>
+  
+    <div ng-repeat="resto in restos | orderBy: '-rating'">
+      <div class="name">{{ resto.name }}</div>
+      <div class="rating"> Rating: {{ resto.rating}}</div>
+      <div class="review">Review: {{ resto.review }}</div><br>
+    </div>  
+      
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
