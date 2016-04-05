@@ -6,7 +6,10 @@ var bodyParser = require('body-parser');
 
 // // configuration /////////////////////////////
 
-mongoose.connect('mongodb://localhost/scratch')
+var port = process.env.PORT || 8090;
+
+var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/scratchdb';
+mongoose.connect(mongoURI);
 
 app.use(express.static(__dirname + '/public')); // set the static files location
 app.use(morgan('dev'));                         // log every request to the console
@@ -80,8 +83,8 @@ app.get('/api/restos', function(req, res) {
 
 // listen ////////////////////////////////////
 
-app.listen(8090, function() {
-  console.log("Example app listening at 8090")
+app.listen(port, function() {
+  console.log("Example app listening at : " + port);
 })
 
 
