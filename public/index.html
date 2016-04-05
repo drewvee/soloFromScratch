@@ -10,7 +10,21 @@
   
   <div class="main" ng-controller="restoCtrl">
     <h1>{{ title }} </h1>
-  
+      
+    <div id='container'>
+      <form name='restoForm' ng-submit='addResto()' novalidate>
+          <input name='resto' type='text' class='form-control'
+            ng-model='resto.text'
+            placeholder='Add your favorit restaurant' required />  
+          
+          <button type='submit' value='Add' ng-disabled='restoForm.$invalid'>
+          add
+          </button>
+          <br>
+          <br>  
+      </form>
+    </div>
+     
     <div ng-repeat="resto in restos | orderBy: '-rating'">
       <div class="name">{{ resto.name }}</div>
       <div class="rating"> Rating: {{ resto.rating}}</div>
@@ -18,29 +32,12 @@
     </div>  
   </div>
   
-  <!-- <div class ="container" ng-controller="mainCtrl">
-    <div class="jumbotron text-center">
-            <h1>Restos I like..<span class="label label-info">{{ restos.length }}</span></h1>
-    </div> -->
-    
-    <!-- <div id="resto-list" class="row">
-      <div class="col-sm-4 col-sm-offset-4">
-          <div class="restos" ng-repeat="resto in restos">
-          </div>
-      </div>
-    </div>
-    
-    <div id="resto-form" class="row">
-      <div class="col-sm-8 col-sm-offset-2 text-center">
-        <form>
-          <div class="form-group">
-            <input type="text" class="form-control input-lg text-center" placeholder="What's your fav resto?" ng-model="formData.text">
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg" ng-click="createResto()">Add</button>
-        </form>
-      </div>
-    </div>
-  </div> -->
+  <div ng-repeat="resto in data.restos">
+      <div class="name">{{ resto.name }}</div>
+    </div>  
+  </div>
+  
+
 
 <script src="app.js"></script>
 
