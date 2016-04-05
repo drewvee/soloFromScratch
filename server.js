@@ -29,7 +29,7 @@ var Resto = mongoose.model('Resto', {
 // routes ////////////
 
 app.get('/api/restos', function(req, res) {
-  Resto.find(function(err, menus) {
+  Resto.find(function(err, restos) {
     if(err)
       res.send(err)
     
@@ -86,18 +86,6 @@ app.get('/api/restos', function(req, res) {
 app.listen(port, function() {
   console.log("Example app listening at : " + port);
 })
-
-
-// // routes ////////////
-
-// app.get('/api/menus', function(req, res) {
-//   Menu.find(function(err, menus) {
-//     if(err)
-//       res.send(err)
-    
-//     res.json(menus)
-//   })
-// })
 
 
 // var http = require('http');

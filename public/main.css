@@ -1,0 +1,41 @@
+html, body {
+ margin: 0;
+ padding: 0;
+ font-family: 'Roboto', sans-serif;
+ width:100%;
+}
+
+.main {
+ background-color: #FFEEBD ;
+ padding: 20px 0;
+}
+
+.main h1 {
+ color: #0A0A82 ;
+ font-size: 54px;
+ margin: 0 0 80px 0;
+ padding: 20px 0;
+   line-height: 60px;
+   width: 80%;
+}
+
+.name {
+   color: #444;
+   margin: 10;
+   font-size: 18px;
+   font-weight: 800;
+}
+
+.rating {
+   color: #5E9500 ;
+   margin: 10;
+   font-size: 18px;
+   font-weight: 200;
+}
+
+.review {
+   color: #5E9500 ;
+   margin: 10;
+   font-size: 18px;
+   font-weight: 200;
+}
