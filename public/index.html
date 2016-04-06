@@ -8,36 +8,41 @@
 
 <body ng-app="scratch">
   
-  <div class="main" ng-controller="restoCtrl">
-    <h1>{{ title }} </h1>
-      
+  <div class="main" ng-controller="mainCtrl">
+     <h1>{{ title }} </h1>
+     
     <div id='container'>
       <form name='restoForm' ng-submit='addResto()' novalidate>
-          <input name='resto' type='text' class='form-control'
+          <input name='resto' type='text' ng-class='form-control'
             ng-model='resto.text'
-            placeholder='Add your favorit restaurant' required />  
+            placeholder='Add your favorit resto' required />  
           
-          <button type='submit' value='Add' ng-disabled='restoForm.$invalid'>
+          <button type='submit' class="form-control input-lg text-center" value='Add' ng-disabled='restoForm.$invalid'>
           add
-          </button>
-          <br>
-          <br>  
+          </button>  
       </form>
     </div>
-     
+  </div>
+    
+  <div class="main" ng-controller="restoCtrl">
+  
     <div ng-repeat="resto in restos | orderBy: '-rating'">
       <div class="name">{{ resto.name }}</div>
       <div class="rating"> Rating: {{ resto.rating}}</div>
       <div class="review">Review: {{ resto.review }}</div><br>
     </div>  
   </div>
+      
+  <div class="main" ng-controller="mainCtrl">
+    <div id='container'>  
+      <div class='restos'>
+        <div class='resto' ng-repeat="resto in data.restos">
+          <div class="text">{{ resto.text }}</div> 
+        </div>
+      </div>
   
-  <div ng-repeat="resto in data.restos">
-      <div class="name">{{ resto.name }}</div>
-    </div>  
-  </div>
-  
-
+    </div>
+  </div>  
 
 <script src="app.js"></script>
 

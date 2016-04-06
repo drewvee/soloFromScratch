@@ -9,7 +9,10 @@ html, body {
  background-color: #FFEEBD ;
  padding: 20px 0;
 }
-
+.mainTwo {
+ background-color: #FFEEBD ;
+ padding: 20px 0;
+}
 .main h1 {
  color: #0A0A82 ;
  font-size: 54px;

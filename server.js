@@ -18,13 +18,9 @@ app.use(bodyParser.json());                     // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 
+var schema = new mongoose.Schema({ text: 'string' });
 
-var Resto = mongoose.model('Resto', {
-    name: String,
-    rating: Number,
-    review: String
-  
-});
+var Resto = mongoose.model('Resto', schema);
 
 // routes ////////////
 
@@ -39,7 +35,7 @@ app.get('/api/restos', function(req, res) {
 
   // create restaurant and send back all restos after creation
   app.post('/api/restos', function(req, res) {
-
+      console.log(req.body);
       // create a Resto, information comes from AJAX request from Angular
       Resto.create({
           text : req.body.text,
@@ -50,8 +46,10 @@ app.get('/api/restos', function(req, res) {
 
           // get and return all the restos after you create another
           Resto.find(function(err, restos) {
-              if (err)
-                  res.send(err)
+              if (err) {
+                res.send(err);
+              }
+              console.log(restos);
               res.json(restos);
           });
       });

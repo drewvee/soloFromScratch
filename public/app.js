@@ -1,23 +1,36 @@
 angular.module('scratch', [])
 
 
-
-.controller('restoCtrl', function($scope, Restos) {
+.controller('mainCtrl', function($scope, Restos) {
   $scope.title = "Restaurants to visit";
-  
   $scope.data = {};
   
   $scope.getRestos = function () {
     Restos.getAll()
-      .then(function (link) {
-        $scope.data.restos = restos;
+      .then(function (resto) {
+        console.log(resto);
+        $scope.data.restos = resto;
       })
       .catch(function (err) {
         console.error(err);
       });
-    
-    $scope.getRestos();
   };
+  
+  $scope.getRestos();
+  
+  $scope.addResto = function(){
+    Restos.addOne($scope.resto)
+      .then(function(res) {
+        console.log(res);
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+  };   
+})
+
+.controller('restoCtrl', function($scope, Restos) {
+  
   
   $scope.restos = [
    {
@@ -41,21 +54,6 @@ angular.module('scratch', [])
     review: 'Yakitori all day every day'
    }
   ]
-})
-
-
-.controller('mainCtrl', function($scope, Restos) {
-  $scope.resto = {};
-  
-  $scope.addResto = function(){
-    Restos.addOne($scope.resto)
-      .then(function(res) {
-        console.log(res);
-      })
-      .catch(function(error) {
-        console.error(error);
-      });
-  };   
 })
 
 .factory('Restos', function($http) {
